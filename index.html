@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DS Experiments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .navbar {
+      background-color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    .navbar-links a:hover {
+      background-color: #555;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .content {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .file-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .file-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f9f9f9;
+      padding: 15px 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .file-item:hover {
+      background-color: #e6f0ff;
+    }
+
+    .file-name {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    .file-name span {
+      margin-left: 10px;
+    }
+
+    .download-button {
+      font-size: 24px;
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .download-button:hover {
+      color: #0056b3;
+    }
+
+    /* Responsive CSS */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      .navbar-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #333;
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        padding: 10px 0;
+      }
+
+      .navbar-links a {
+        text-align: center;
+        padding: 12px;
+        font-size: 20px;
+        margin: 10px 10px; /* 10px margin for mobile */
+        border-top: 1px solid #444;
+      }
+
+      .file-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .download-button {
+        align-self: flex-end;
+        margin-top: 10px;
+      }
+
+      .content {
+        padding: 30px 10px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .file-list {
+        width: 100%;
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">Lab_Test</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="navbar-links" id="navbarLinks">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>DS Experiments</h1>
+    <ul class="file-list">
+      <li class="file-item">
+        <div class="file-name">📄 <span>Experiment 1.pdf</span></div>
+        <a href="Files/DS_Expt_01.pdf" download class="download-button">⬇️</a>
+      </li>
+      <li class="file-item">
+        <div class="file-name">📄 <span>Experiment 2.pdf</span></div>
+        <a href="Files/DS_Expt_02_new.pdf" download class="download-button">⬇️</a>
+      </li>
+      <li class="file-item">
+        <div class="file-name">📄 <span>Experiment 3.pdf</span></div>
+        <a href="Files/DS_Expt_03.pdf" download class="download-button">⬇️</a>
+      </li>
+      <li class="file-item">
+        <div class="file-name">📄 <span>Experiment 4.pdf</span></div>
+        <a href="Files/DS_Expt_04.pdf" download class="download-button">⬇️</a>
+      </li>
+      <li class="file-item">
+        <div class="file-name">📄 <span>Experiment 5.pdf</span></div>
+        <a href="Files/DS_Expt_05_Towar of Hanoi.docx.pdf" download class="download-button">⬇️</a>
+      </li>
+      <li class="file-item">
+        <div class="file-name">📄 <span>Experiment 6.pdf</span></div>
+        <a href="Files/DS_Expt_06_Binary search numbers.pdf" download class="download-button">⬇️</a>
+      </li>
+      <li class="file-item">
+        <div class="file-name">📄 <span>Experiment 7.pdf</span></div>
+        <a href="Files/DS_EXPT_07_Rec_two nos.pdf" download class="download-button">⬇️</a>
+      </li>
+      <li class="file-item">
+        <div class="file-name">📄 <span>Experiment 8.pdf</span></div>
+        <a href="Files/DS_Expt_08_Insertion Sort.pdf" download class="download-button">⬇️</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var links = document.getElementById("navbarLinks");
+      if (links.style.display === "flex") {
+        links.style.display = "none";
+      } else {
+        links.style.display = "flex";
+      }
+    }
+
+    // Optional: Close menu when a link is clicked (better for mobile UX)
+    document.querySelectorAll('.navbar-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById("navbarLinks").style.display = "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
