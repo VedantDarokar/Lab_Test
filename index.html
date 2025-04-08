@@ -1,231 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <title>DS Experiments</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LAB_TEST</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: '#10b981',
+            secondary: '#22d3ee',
+            darkNavbar: '#0a0f1a',
+            darkBackground: '#1c2431',
+            darkCard: '#242f3d',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.7s, color 0.7s;
+      background: radial-gradient(circle at center, #dbeafe, #eff6ff);
+      background-size: 400% 400%;
     }
-
-    .navbar {
-      background-color: #333;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    .logo {
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .navbar-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .navbar-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 8px 12px;
-      border-radius: 5px;
-    }
-
-    .navbar-links a:hover {
-      background-color: #555;
-    }
-
-    .menu-icon {
-      display: none;
-      font-size: 28px;
-      color: white;
-      cursor: pointer;
-    }
-
-    .content {
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 30px;
-    }
-
-    .file-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      max-width: 600px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .file-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #f9f9f9;
-      padding: 15px 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    .file-item:hover {
-      background-color: #e6f0ff;
-    }
-
-    .file-name {
-      display: flex;
-      align-items: center;
-      font-size: 18px;
-    }
-
-    .file-name span {
-      margin-left: 10px;
-    }
-
-    .download-button {
-      font-size: 24px;
-      color: #007BFF;
-      text-decoration: none;
-    }
-
-    .download-button:hover {
-      color: #0056b3;
-    }
-
-    /* Responsive CSS */
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: block;
-      }
-
-      .navbar-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #333;
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        padding: 10px 0;
-      }
-
-      .navbar-links a {
-        text-align: center;
-        padding: 12px;
-        font-size: 20px;
-        margin: 10px 10px; /* 10px margin for mobile */
-        border-top: 1px solid #444;
-      }
-
-      .file-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .download-button {
-        align-self: flex-end;
-        margin-top: 10px;
-      }
-
-      .content {
-        padding: 30px 10px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      .file-list {
-        width: 100%;
-        padding: 0 10px;
-      }
+    .dark body {
+      background: radial-gradient(circle at center, #1c2431, #1c2431);
+      background-size: 400% 400%;
     }
   </style>
 </head>
-<body>
 
-  <div class="navbar">
-    <div class="logo">Lab_Test</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <div class="navbar-links" id="navbarLinks">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+<body class="text-gray-800 dark:text-gray-100 transition-all duration-700">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-darkNavbar sticky top-0 z-50 shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <div class="flex items-center space-x-2">
+        <a href="#" class="text-2xl font-bold text-primary dark:text-secondary">LAB_TEST</a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary">Home</a>
+        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary">About</a>
+        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary">Contact</a>
+        <button id="theme-toggle" class="bg-primary dark:bg-secondary text-white px-4 py-2 rounded-full hover:opacity-80 transition">
+          🌙 Dark Mode
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+      <a href="#" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary">Home</a>
+      <a href="#" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary">About</a>
+      <a href="#" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary">Contact</a>
+      <button id="theme-toggle-mobile" class="mt-2 w-full bg-primary dark:bg-secondary text-white px-4 py-2 rounded-full hover:opacity-80 transition">
+        🌙 Dark Mode
+      </button>
+    </div>
+  </nav>
+
+  <!-- Space after Navbar -->
+  <div class="mt-16"></div>
+
+  <!-- Cards Section -->
+  <div class="p-4 sm:p-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Card Example -->
+      <div class="bg-white dark:bg-darkCard rounded-2xl overflow-hidden shadow-md transition-all duration-500">
+        <div class="relative group">
+          <img src="img/ds.jpg" alt="Data Structure" class="w-full h-60 object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 text-center">
+            <p class="text-white text-lg font-semibold">Data Structure</p>
+          </div>
+        </div>
+        <div class="p-4 text-center">
+          <button onclick="window.location.href='ds.html'" class="mt-2 px-4 py-2 bg-primary dark:bg-secondary text-white rounded-full hover:opacity-90 transition">
+            Visit Page
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white dark:bg-darkCard rounded-2xl overflow-hidden shadow-md transition-all duration-500">
+        <div class="relative group">
+          <img src="img/os.jpg" alt="Operating System" class="w-full h-60 object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 text-center">
+            <p class="text-white text-lg font-semibold">Operating System</p>
+          </div>
+        </div>
+        <div class="p-4 text-center">
+          <button onclick="window.location.href='os.html'" class="mt-2 px-4 py-2 bg-primary dark:bg-secondary text-white rounded-full hover:opacity-90 transition">
+            Visit Page
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white dark:bg-darkCard rounded-2xl overflow-hidden shadow-md transition-all duration-500">
+        <div class="relative group">
+          <img src="img/dcn.jpg" alt="Data Communication" class="w-full h-60 object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 text-center">
+            <p class="text-white text-lg font-semibold">Data Communication and Networking</p>
+          </div>
+        </div>
+        <div class="p-4 text-center">
+          <button onclick="window.location.href='dcn.html'" class="mt-2 px-4 py-2 bg-primary dark:bg-secondary text-white rounded-full hover:opacity-90 transition">
+            Visit Page
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white dark:bg-darkCard rounded-2xl overflow-hidden shadow-md transition-all duration-500">
+        <div class="relative group">
+          <img src="img/c.skill.jpg" alt="C Skill" class="w-full h-60 object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 text-center">
+            <p class="text-white text-lg font-semibold">C-Skill</p>
+          </div>
+        </div>
+        <div class="p-4 text-center">
+          <button onclick="window.location.href='cskill.html'" class="mt-2 px-4 py-2 bg-primary dark:bg-secondary text-white rounded-full hover:opacity-90 transition">
+            Visit Page
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="content">
-    <h1>DS Experiments</h1>
-    <ul class="file-list">
-      <li class="file-item">
-        <div class="file-name">📄 <span>Experiment 1.pdf</span></div>
-        <a href="Files/DS_Expt_01.pdf" download class="download-button">⬇️</a>
-      </li>
-      <li class="file-item">
-        <div class="file-name">📄 <span>Experiment 2.pdf</span></div>
-        <a href="Files/DS_Expt_02_new.pdf" download class="download-button">⬇️</a>
-      </li>
-      <li class="file-item">
-        <div class="file-name">📄 <span>Experiment 3.pdf</span></div>
-        <a href="Files/DS_Expt_03.pdf" download class="download-button">⬇️</a>
-      </li>
-      <li class="file-item">
-        <div class="file-name">📄 <span>Experiment 4.pdf</span></div>
-        <a href="Files/DS_Expt_04.pdf" download class="download-button">⬇️</a>
-      </li>
-      <li class="file-item">
-        <div class="file-name">📄 <span>Experiment 5.pdf</span></div>
-        <a href="Files/DS_Expt_05_Towar of Hanoi.docx.pdf" download class="download-button">⬇️</a>
-      </li>
-      <li class="file-item">
-        <div class="file-name">📄 <span>Experiment 6.pdf</span></div>
-        <a href="Files/DS_Expt_06_Binary search numbers.pdf" download class="download-button">⬇️</a>
-      </li>
-      <li class="file-item">
-        <div class="file-name">📄 <span>Experiment 7.pdf</span></div>
-        <a href="Files/DS_EXPT_07_Rec_two nos.pdf" download class="download-button">⬇️</a>
-      </li>
-      <li class="file-item">
-        <div class="file-name">📄 <span>Experiment 8.pdf</span></div>
-        <a href="Files/DS_Expt_08_Insertion Sort.pdf" download class="download-button">⬇️</a>
-      </li>
-    </ul>
-  </div>
-
+  <!-- JavaScript for Dark Mode and Mobile Menu -->
   <script>
-    function toggleMenu() {
-      var links = document.getElementById("navbarLinks");
-      if (links.style.display === "flex") {
-        links.style.display = "none";
+    const toggleBtn = document.getElementById('theme-toggle');
+    const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
+    const htmlElement = document.documentElement;
+    const mobileMenuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function updateButton() {
+      if (htmlElement.classList.contains('dark')) {
+        toggleBtn.innerHTML = '☀️ Light Mode';
+        toggleBtnMobile.innerHTML = '☀️ Light Mode';
       } else {
-        links.style.display = "flex";
+        toggleBtn.innerHTML = '🌙 Dark Mode';
+        toggleBtnMobile.innerHTML = '🌙 Dark Mode';
       }
     }
 
-    // Optional: Close menu when a link is clicked (better for mobile UX)
-    document.querySelectorAll('.navbar-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById("navbarLinks").style.display = "none";
-      });
+    toggleBtn.addEventListener('click', () => {
+      htmlElement.classList.toggle('dark');
+      updateButton();
+    });
+
+    toggleBtnMobile.addEventListener('click', () => {
+      htmlElement.classList.toggle('dark');
+      updateButton();
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    window.addEventListener('DOMContentLoaded', updateButton);
+
+    // Dynamic Background
+    document.addEventListener('mousemove', function(e) {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      document.body.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
     });
   </script>
 
