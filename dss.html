@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DS</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: '#10b981',
+            secondary: '#22d3ee',
+            darkNavbar: '#0a0f1a',
+            darkBackground: '#232b38',
+            darkCard: '#2e3a4d',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.7s, color 0.7s;
+      background: radial-gradient(circle at center, #dbeafe, #eff6ff);
+      background-size: 400% 400%;
+    }
+
+    .dark body {
+      background: radial-gradient(circle at center, #232b38, #232b38);
+      background-size: 400% 400%;
+    }
+  </style>
+</head>
+
+<body class="text-gray-800 dark:text-gray-100 transition-all duration-700">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-darkNavbar sticky top-0 z-50 transition-all shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        
+        <!-- Brand -->
+        <div class="flex items-center space-x-2">
+          <a href="./index.html" class="text-2xl font-bold text-primary dark:text-secondary">LAB_TEST</a>
+        </div>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary">Home</a>
+          <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary">About</a>
+          <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary">Contact</a>
+
+          <!-- Dark Mode Button -->
+          <button id="theme-toggle" class="bg-primary dark:bg-secondary text-white px-4 py-2 rounded-full hover:opacity-80 transition">
+            🌙 Dark Mode
+          </button>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-darkNavbar transition-all duration-300 shadow-lg">
+      <div class="px-4 pt-2 pb-4 space-y-3">
+        <a href="#" class="block text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary py-2">Home</a>
+        <a href="#" class="block text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary py-2">About</a>
+        <a href="#" class="block text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary py-2">Contact</a>
+        
+        <!-- Dark Mode Button for Mobile -->
+        <button id="mobile-theme-toggle" class="w-full text-left bg-primary dark:bg-secondary text-white px-4 py-2 rounded-full hover:opacity-80 transition">
+          🌙 Dark Mode
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Space after Navbar -->
+  <div class="mt-16"></div>
+
+  <!-- File Download Section -->
+  <section class="max-w-5xl mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-6 text-center text-primary dark:text-secondary">DS Experiments</h2>
+
+    <div class="space-y-4">
+      <!-- Card 1 -->
+      <a href="Files/DSS/Exp01.pdf" download
+        class="flex items-center justify-between bg-white dark:bg-darkCard p-4 rounded-2xl shadow hover:shadow-lg transition">
+        <span class="text-lg font-semibold text-gray-700 dark:text-gray-200">Experiment 1</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary dark:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+        </svg>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="Files/DSS/Exp02.pdf" download
+        class="flex items-center justify-between bg-white dark:bg-darkCard p-4 rounded-2xl shadow hover:shadow-lg transition">
+        <span class="text-lg font-semibold text-gray-700 dark:text-gray-200">Experiment 2</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary dark:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+        </svg>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="Files/DSS/Exp03.pdf" download
+        class="flex items-center justify-between bg-white dark:bg-darkCard p-4 rounded-2xl shadow hover:shadow-lg transition">
+        <span class="text-lg font-semibold text-gray-700 dark:text-gray-200">Experiment 3</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary dark:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+        </svg>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="Files/DSS/Exp04.pdf" download
+        class="flex items-center justify-between bg-white dark:bg-darkCard p-4 rounded-2xl shadow hover:shadow-lg transition">
+        <span class="text-lg font-semibold text-gray-700 dark:text-gray-200">Experiment 4</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary dark:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+        </svg>
+      </a>
+
+      <!-- Card 5 -->
+      <a href="Files/DSS/Exp05.pdf" download
+        class="flex items-center justify-between bg-white dark:bg-darkCard p-4 rounded-2xl shadow hover:shadow-lg transition">
+        <span class="text-lg font-semibold text-gray-700 dark:text-gray-200">Experiment 5</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary dark:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+        </svg>
+      </a>
+
+      <!-- Card 6 -->
+      <a href="Files/DSS/Exp06.pdf" download
+        class="flex items-center justify-between bg-white dark:bg-darkCard p-4 rounded-2xl shadow hover:shadow-lg transition">
+        <span class="text-lg font-semibold text-gray-700 dark:text-gray-200">Experiment 6</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary dark:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+        </svg>
+      </a>
+
+      <!-- Card 7 -->
+      <a href="Files/DSS/Exp07A.pdf" download
+        class="flex items-center justify-between bg-white dark:bg-darkCard p-4 rounded-2xl shadow hover:shadow-lg transition">
+        <span class="text-lg font-semibold text-gray-700 dark:text-gray-200">Experiment 7A</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary dark:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+        </svg>
+      </a>
+
+      <!-- Card 8 -->
+      <a href="Files/DSS/Exp07B.pdf" download
+        class="flex items-center justify-between bg-white dark:bg-darkCard p-4 rounded-2xl shadow hover:shadow-lg transition">
+        <span class="text-lg font-semibold text-gray-700 dark:text-gray-200">Experiment 7B</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary dark:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+        </svg>
+      </a>
+      <!-- Card 9 -->
+      <a href="Files/DSS/Exp08.pdf" download
+        class="flex items-center justify-between bg-white dark:bg-darkCard p-4 rounded-2xl shadow hover:shadow-lg transition">
+        <span class="text-lg font-semibold text-gray-700 dark:text-gray-200">Experiment 8</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary dark:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+        </svg>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- JavaScript for Dark Mode and Cursor Background -->
+  <script>
+    // Theme toggle functionality
+    const toggleBtn = document.getElementById('theme-toggle');
+    const mobileToggleBtn = document.getElementById('mobile-theme-toggle');
+    const htmlElement = document.documentElement;
+
+    function updateButtons() {
+      const isDark = htmlElement.classList.contains('dark');
+      const text = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+      toggleBtn.innerHTML = text;
+      mobileToggleBtn.innerHTML = text;
+    }
+
+    function toggleDarkMode() {
+      htmlElement.classList.toggle('dark');
+      updateButtons();
+    }
+
+    toggleBtn.addEventListener('click', toggleDarkMode);
+    mobileToggleBtn.addEventListener('click', toggleDarkMode);
+
+    // Mobile menu functionality
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('hidden');
+      
+      // Change hamburger to X when menu is open
+      if (!isOpen) {
+        mobileMenuButton.innerHTML = `
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        `;
+      } else {
+        mobileMenuButton.innerHTML = `
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        `;
+      }
+    });
+
+    // Close mobile menu on window resize if screen becomes large
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) { // md breakpoint in Tailwind
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.innerHTML = `
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        `;
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', updateButtons);
+
+    // --- Dynamic Background Movement with Cursor ---
+    document.addEventListener('mousemove', function(e) {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      document.body.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
+    });
+  </script>
+
+</body>
+</html>
